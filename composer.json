@@ -1,6 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "marks/laravel-api-boilerplate",
+    "description": "The Laravel API boilerplate",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
