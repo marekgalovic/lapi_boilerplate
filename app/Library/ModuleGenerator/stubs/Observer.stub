@@ -1,0 +1,8 @@
+<?php namespace App\Models\%name%;
+
+use App\Models\BaseObserver;
+
+class %name%Observer extends BaseObserver
+{
+
+}

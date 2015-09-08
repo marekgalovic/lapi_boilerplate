@@ -1,0 +1,8 @@
+<?php namespace App\Models\%name%;
+
+use App\Models\BaseModel;
+
+class %name% extends BaseModel
+{
+	protected $fillable = [];
+}
