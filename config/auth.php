@@ -28,7 +28,8 @@ return [
     |
     */
 
-    'model' => App\User::class,
+    'model' => App\Models\User\User::class,
+    'expires' => 20, //seconds
 
     /*
     |--------------------------------------------------------------------------

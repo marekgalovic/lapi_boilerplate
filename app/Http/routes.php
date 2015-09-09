@@ -11,6 +11,13 @@
 |
 */
 
-resourceRoute('blog', 'BlogController');
+resourceRoute('auth', 'AuthController');
 
+Route::group(['middleware' => 'oauth'], function()
+{
+	Route::get('/', function()
+		{
+			echo 'ahoj';
+		});
+});
 

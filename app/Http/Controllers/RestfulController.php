@@ -4,6 +4,22 @@ use Illuminate\Http\Request;
 
 abstract class RestfulController extends Controller
 {
+
+	protected $repository;
+
+    public function __construct()
+    {
+    	$this->repository = $this->getRepository();
+    }
+
+    private function getRepository()
+    {
+    	$called = class_basename( get_called_class() );
+    	$base  = str_replace('Controller', '', $called);
+    	$repositoryClass = 'App\Models\\' . $base . '\\' . $base . 'Repository';
+    	return new $repositoryClass;
+    }
+    
 	public function index()
 	{
 		return json( $this->repository->all() );

@@ -144,6 +144,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Library\OAuth\OAuthServiceProvider::class
 
     ],
 
@@ -163,6 +164,7 @@ return [
         'App'       => Illuminate\Support\Facades\App::class,
         'Artisan'   => Illuminate\Support\Facades\Artisan::class,
         'Auth'      => Illuminate\Support\Facades\Auth::class,
+        'OAuth'     => App\Library\OAuth\OAuthFacade::class,
         'Blade'     => Illuminate\Support\Facades\Blade::class,
         'Bus'       => Illuminate\Support\Facades\Bus::class,
         'Cache'     => Illuminate\Support\Facades\Cache::class,

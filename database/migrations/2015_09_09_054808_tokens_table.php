@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class BlogsTable extends Migration
+class TokensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,17 @@ class BlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function( Blueprint $t)
-        {   
+        Schema::create('tokens', function(Blueprint $t)
+        {
             $t->increments( 'id' );
-            $t->string( 'title' );
-            $t->text( 'body' );
-            $t->timestamps();
+
+            $t->string( 'token' );
+            $t->timestamp( 'expires' );
+
+            $t->integer( 'user_id' )->unsigned();
+            $t->foreign( 'user_id' )->references( 'id' )->on( 'users' );
+
+            $t->timestamps(); 
         });
     }
 
@@ -28,6 +33,6 @@ class BlogsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('blogs');
+        Schema::drop('tokens');
     }
 }
