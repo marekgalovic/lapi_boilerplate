@@ -5,6 +5,12 @@ use OAuth;
 
 class AuthController extends Controller
 {
+
+	public function getToken()
+	{
+		return csrf_token();
+	}
+
 	public function postLogin(Request $request)
 	{
 		$token = OAuth::attempt(['email'=>$request->get('email'), 'password'=>$request->get('password')]);

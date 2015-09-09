@@ -29,7 +29,9 @@ return [
     */
 
     'model' => App\Models\User\User::class,
-    'expires' => 20, //seconds
+
+    /* set token expiration time in seconds */
+    'expires' => 3600,
 
     /*
     |--------------------------------------------------------------------------
