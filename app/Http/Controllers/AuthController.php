@@ -6,9 +6,9 @@ use OAuth;
 class AuthController extends Controller
 {
 
-	public function getToken()
+	public function getLogged()
 	{
-		return csrf_token();
+		return response()->json(Oauth::get());
 	}
 
 	public function postLogin(Request $request)

@@ -28,13 +28,13 @@ class Middleware
 
     public function handle($request, Closure $next)
     {
-        $token = $request->header('api-token');
+        $token = $request->header('Api-Token');
         $user = $this->dispatch(new VerifyApiToken( $token ));
         if($user)
         {
             $this->auth->set( $user );
             return $next($request);
         }
-        return response(null, 403);
+        return response(null, 401);
     }
 }
