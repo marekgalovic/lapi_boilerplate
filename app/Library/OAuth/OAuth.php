@@ -36,7 +36,7 @@ class OAuth
 
 	public function logout()
 	{
-		$this->model->tokens()->delete();
+		$this->get()->tokens()->delete();
 	}
 
 	public function set( $user )

@@ -20,5 +20,11 @@ class AuthController extends Controller
 			return response($token, 200);
 		}
 		return response(null, 401);
-	}	
+	}
+
+	public function getLogout()
+	{
+		OAuth::logout();
+		return response(null, 200);
+	}
 }
