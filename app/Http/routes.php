@@ -15,8 +15,6 @@ Route::post('auth/login', 'AuthController@postLogin');
 
 Route::group(['middleware' => 'oauth'], function() {
 	resourceRoute('auth', 'AuthController');
-	Route::get('/', function() {
-		echo 'This is protected route';
-	});
+	resourceRoute('categories', 'CategoryController');
 });
 

@@ -12,14 +12,14 @@ class MakeModule extends Command
      *
      * @var string
      */
-    protected $signature = 'make:module {name}';
+    protected $signature = 'make:module {name} {--translation}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create RESTful application endpoint';
+    protected $description = 'Create application module';
 
     /**
      * Execute the console command.
@@ -35,7 +35,7 @@ class MakeModule extends Command
 
     public function fire()
     {
-        $generator = new ModuleGenerator( $this->filesystem );
-        $generator->generate( $this->argument('name') );
+        $generator = new ModuleGenerator( $this, $this->filesystem );
+        $generator->generate( $this->argument('name'), ['translation' => $this->option('translation')] );
     }
 }

@@ -144,7 +144,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Library\OAuth\OAuthServiceProvider::class
+        App\Library\OAuth\OAuthServiceProvider::class,
+        App\Library\DBTranslator\DBTranslatorServiceProvider::class
 
     ],
 
@@ -195,6 +196,7 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'DBTranslator' => App\Library\DBTranslator\DBTranslatorFacade::class
 
     ],
 

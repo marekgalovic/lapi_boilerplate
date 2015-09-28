@@ -8,7 +8,7 @@ class AuthController extends Controller
 
 	public function getLogged()
 	{
-		return response()->json(Oauth::get());
+		return response()->json(OAuth::get());
 	}
 
 	public function postLogin(Request $request)
